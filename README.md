@@ -4,6 +4,10 @@
 - Descobrir quantas vagas estão sobrando por disciplina
 - Mostrar apenas disciplinas cujo número de vagas sobrando seja maior do que zero.
 
+# Requirements
+
+- Node.js ^11.0.0
+
 # License
 
 MIT
