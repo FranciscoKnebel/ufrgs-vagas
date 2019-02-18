@@ -1,18 +1,28 @@
 const model = class Command {
-
-  constructor(command, description, action) {
+  constructor(command, description, action, options = []) {
     this.command = command;
     this.description = description;
     this.action = action;
+    this.options = options;
   }
 
   implementIn(program) {
-    program
-      .command(this.command)
+    const cmd = program
+      .command(this.command);
+
+    this.options.reduce(
+      (acc, curr) => acc.option(curr.flag, curr.description), cmd
+    )
       .description(this.description)
       .action(this.action);
   }
-
 }
 
-export { model as Command };
+const option = class Option {
+  constructor(flag, description) {
+    this.flag = flag;
+    this.description = description;
+  }
+}
+
+export { model as Command, option as Option };

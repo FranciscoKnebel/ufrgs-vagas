@@ -4,7 +4,6 @@ import commands from './commands';
 
 program
   .version(pkg.version, '-v, --version');
-  // .options()
 
 commands(program);
 
