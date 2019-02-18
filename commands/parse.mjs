@@ -15,9 +15,9 @@ function validColumnIndex(index) {
 }
 
 const parse = new Command(
-  'parse <path>',
-  'Parse HTML file in <path>.',
-  (path, program) => {
+  'parse <input_path> [output_path]',
+  'Parse HTML file in <input_path>. If [output_path] is defined, will write data to file.',
+  (path, output, program) => {
     readFile(path, 'UTF-8', (err, data) => {
       if (err)
         throw err;
@@ -85,10 +85,22 @@ const parse = new Command(
       }
 
       // DONE!
+      let result;
       if (program.filled) {
-        console.log(results.total);
+        result = results.total;
       } else {
-        console.log(results.sobrando);
+        result = results.sobrando;
+      }
+
+      if (output) {
+        writeFile(output, result.join('\n'), (err) => {
+          if (err)
+            throw err;
+
+          console.log("Done writing file.");
+        })
+      } else {
+        console.log(result);
       }
     });
   },
