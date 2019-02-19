@@ -1,6 +1,6 @@
 {
   "name": "ufrgs-vagas",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Efetua o parsing da página de vagas por grupo de matrícula, afim de descobrir disciplinas com vagas sobrando para efetuar o ajuste de matrícula.",
   "main": "index.mjs",
   "bin": {
