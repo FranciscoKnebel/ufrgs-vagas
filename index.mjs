@@ -1,6 +1,6 @@
 import program from 'commander';
 import pkg from './package.json';
-import commands from './commands';
+import commands from './commands/index.mjs';
 
 program
   .version(pkg.version, '-v, --version');
