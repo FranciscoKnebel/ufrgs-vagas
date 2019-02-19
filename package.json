@@ -4,16 +4,17 @@
   "description": "Efetua o parsing da página de vagas por grupo de matrícula, afim de descobrir disciplinas com vagas sobrando para efetuar o ajuste de matrícula.",
   "main": "index.mjs",
   "bin": {
-    "ufrgs-vagas": "./dist/bundle"
+    "ufrgs-vagas": "./dist/ufrgs-vagas"
   },
   "files": [
-    "./dist/bundle"
+    "./dist/ufrgs-vagas"
   ],
   "scripts": {
     "start": "node --experimental-modules index.mjs",
     "build": "npm run build:rollup && npm run build:prep",
     "build:rollup": "rollup -c rollup.config.js --compact",
-    "build:prep": "sed -i '1i #!/usr/bin/env node' dist/ufrgs-vagas && chmod +x dist/ufrgs-vagas"
+    "build:prep": "sed -i '1i #!/usr/bin/env node' dist/ufrgs-vagas && chmod +x dist/ufrgs-vagas",
+    "version": "npm run build"
   },
   "repository": {
     "type": "git",
