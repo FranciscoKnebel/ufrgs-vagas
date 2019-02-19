@@ -14,7 +14,7 @@
     "build": "npm run build:rollup && npm run build:prep",
     "build:rollup": "rollup -c rollup.config.js --compact",
     "build:prep": "sed -i '1i #!/usr/bin/env node' dist/ufrgs-vagas && chmod +x dist/ufrgs-vagas",
-    "version": "npm run build"
+    "version": "npm run build && git add dist/"
   },
   "repository": {
     "type": "git",
